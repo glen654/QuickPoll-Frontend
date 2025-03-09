@@ -19,19 +19,22 @@ export function AuthInput({ value, onChange, label, placeholder, type }) {
           value={value}
           onChange={(e) => onChange(e)}
         />
-
-        {showPassword ? (
-          <FaRegEye
-            size={22}
-            className="text-primary cursor-pointer"
-            onClick={() => toggleShowPassword()}
-          />
-        ) : (
-          <FaRegEyeSlash
-            size={22}
-            className="text-slate-400 cursor-pointer"
-            onClick={() => toggleShowPassword()}
-          />
+        {type === "password" && (
+          <>
+            {showPassword ? (
+              <FaRegEye
+                size={22}
+                className="text-primary cursor-pointer"
+                onClick={() => toggleShowPassword()}
+              />
+            ) : (
+              <FaRegEyeSlash
+                size={22}
+                className="text-slate-400 cursor-pointer"
+                onClick={() => toggleShowPassword()}
+              />
+            )}
+          </>
         )}
       </div>
     </div>
