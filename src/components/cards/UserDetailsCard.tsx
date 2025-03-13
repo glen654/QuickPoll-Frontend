@@ -6,5 +6,37 @@ export function UserDetailsCard({
   totalPollsCreated,
   totalPollsBookmarked,
 }) {
-  return <div>Userdetailscard</div>;
+  return (
+    <div className="bg-slate-100/50 rounded-lg mt-16 overflow-hidden">
+      <div className="w-full h-32 bg-profile-bg--img bg-cover flex justify-center bg-sky-500 relative">
+        <div className="absolute -bottom-10 rounded-full overflow-hidden border-2 border-primary">
+          <img
+            src={profileImageUrl || ""}
+            alt="Profile Image"
+            className="w-20 h-20 bg-slate-400 rounded-full"
+          />
+        </div>
+      </div>
+
+      <div className="mt-12 px-5">
+        <div className="text-center pt-1">
+          <h5 className="text-lg text-gray-950 font-medium leading-6">
+            {fullname}
+          </h5>
+          <span className="text-[13px] font-medium text-slate-700/60">
+            @{username}
+          </span>
+        </div>
+
+        <div className="">
+          <StatsInfo label="Polls Created" value={totalPollsCreated || 0} />
+          <StatsInfo label="Polls Voted" value={totalPollsVotes || 0} />
+          <StatsInfo
+            label="Polls Bookmarked"
+            value={totalPollsBookmarked || 0}
+          />
+        </div>
+      </div>
+    </div>
+  );
 }

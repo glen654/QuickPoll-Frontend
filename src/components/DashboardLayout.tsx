@@ -1,3 +1,5 @@
+import { UserDetailsCard } from "./cards/UserDetailsCard";
+
 export function DashboardLayout({ children }) {
   return (
     <div className="flex">
